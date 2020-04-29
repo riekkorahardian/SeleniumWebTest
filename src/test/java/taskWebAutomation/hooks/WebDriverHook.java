@@ -6,13 +6,13 @@ import io.cucumber.java.Before;
 
 public class WebDriverHook {
 
-    @Before(value = "@Web")
+    @Before
     public void InitialiedWebDriver(){
 
         WebDriverInstance.initialize();
     }
 
-    @After(value = "@Web")
+    @After
     public void quitWebDriver(){
         WebDriverInstance.quit();
 

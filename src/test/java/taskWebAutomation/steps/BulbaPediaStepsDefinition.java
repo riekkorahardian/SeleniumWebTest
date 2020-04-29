@@ -21,15 +21,16 @@ public class BulbaPediaStepsDefinition {
         mainPage.Searching(keyword);
     }
 
-
-
-    @Then("User see article with title {string} with number {string} on article page")
-    public void userSeeArticleWithTitleWithNumberOnArticlePage(String name, String number) {
+    @Then("User see article with title {string} on article page")
+    public void userSeeArticleWithTitleOnArticlePage(String name) {
         String Name = articlePage.getName();
-        String Number = articlePage.getNumber();
         Assert.assertEquals(Name, name);
-        Assert.assertEquals(Number, number);
+    }
 
+    @Then("User see article with number {string} on article page")
+    public void userSeeArticleWithNumberOnArticlePage(String number) {
+        String Number = articlePage.getNumber();
+        Assert.assertEquals(Number, number);
     }
 }
 
